@@ -1,4 +1,5 @@
-💻 Loan Amount Prediction Web Application using Machine Learning & Flask 🧠
+** Loan Amount Prediction Web Application using Machine Learning & Flask 🧠**
+
 
 I developed an ML-powered web app to predict loan amounts based on applicant details.
 
