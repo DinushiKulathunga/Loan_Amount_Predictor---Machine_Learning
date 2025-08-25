@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang=""en>
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css') }}">
+    <style>
+  body { background-color: yellow !important; }
+</style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scaled=1.0">
+    <title>Predict</title>
+</head>
+<body>
+     
+    <div class="wrapper">
+        <div class="title">Loan Amount Predictor</div>
+    </div>
+
+    <form action="/" method="POST">
+            <div class="inputfield">
+                <label for="Gender">Gender</label>
+                <div class="custom_select">
+                    <select name="Gender" id="Gender">
+                        <option value="" selected hidden>Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+            </div>
+           
+            <div class="inputfield">
+                <label for = "ApplicantSalary">Applicant Salary </label>
+                <input class="input" type="int" name="ApplicantSalary" required>
+            </div>
+            <div class="inputfield">
+                <label for="Married">Married</label>
+                <div class="custom_select">
+                    <select name="Married" id="Married">
+                        <option value="" selected hidden>Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="inputfield">
+                <label for="Dependents">Dependents</label>
+                <div class="custom_select">
+                    <select name="Dependents" id="Dependents">
+                        <option value="" selected hidden>Select</option>
+                        <option value="0">None</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3+">Three or more</option>
+                    </select>
+                </div>
+            </div>
+            <div class="inputfield">
+                <label for = "CoapplicantIncome ">Coapplicant Salary </label>
+                <input class="input" type="float" name="CoapplicantIncome" required>
+            </div>
+            <div class="inputfield">
+                <label for = "TotalIncome">Total Income </label>
+                <input class="input" type="float" name="TotalIncome" required>
+            </div>
+            <div class="inputfield">
+                <label for="Property_Area">Property Area</label>
+                <div class="custom_select">
+                    <select name="Property_Area" id="Property_Area">
+                        <option value="" selected hidden>Select</option>
+                        <option value="Semiurban">Semi Urban</option>
+                        <option value="Urban">Urban</option>
+                        <option value="Rural">Rural</option>
+                    </select>
+                </div>
+            </div>
+            <div class="inputfield">
+                <input type="submit" class="btn" value="Predict Amount">
+           </div>            
+    </form>
+    <div class="result">
+        {% if pred_value !=0%}
+        <p>
+            Estimated Price:LKR {{pred_value}}
+        </p>
+        {% endif %}
+    </div>
+</body>
+
+</html>
